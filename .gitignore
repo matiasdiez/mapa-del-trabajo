@@ -1,0 +1,106 @@
+# ==============================================================================
+# Entorno Python & Caches (mapa, news-scrapping, etc.)
+# ==============================================================================
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Entornos virtuales
+.venv/
+venv/
+env/
+ENV/
+
+# ==============================================================================
+# Node.js & Frontend (mapa frontend / visualizaciones)
+# ==============================================================================
+node_modules/
+.pnpm-store/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnpm-debug.log*
+.turbo/
+.next/
+out/
+.cache/
+
+# ==============================================================================
+# Variables de entorno y secretos — NUNCA commitear
+# ==============================================================================
+.env
+.env.local
+.env.*.local
+*.env
+# Permitir versionar archivos de ejemplo / plantilla
+!*.env.example
+!**/.env.example
+
+# ==============================================================================
+# Datos & Archivos pesados (no versionar datos descargados ni intermedios)
+# ==============================================================================
+**/data/incoming/**
+!**/data/incoming/**/
+!**/data/incoming/**/.gitkeep
+
+**/data/processed/**
+!**/data/processed/**/
+!**/data/processed/**/.gitkeep
+
+# Bases de datos y archivos locales de caché
+*.sqlite
+*.sqlite3
+*.db
+*.duckdb
+
+# GIS, mapas y tiles generados localmente
+*.pmtiles
+*.mbtiles
+tiles/
+
+# ==============================================================================
+# Logs & Salidas temporales
+# ==============================================================================
+*.log
+logs/
+
+# ==============================================================================
+# Documentación proyectos
+# ==============================================================================
+
+mapa/docs/
+news-scrapping/docs/
+
+# ==============================================================================
+# Editores y Sistema Operativo
+# ==============================================================================
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+.idea/
+.vscode/
+*.swp
+*.swo
+*~

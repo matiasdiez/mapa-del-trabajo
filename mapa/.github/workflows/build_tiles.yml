@@ -1,0 +1,48 @@
+name: Build Tiles (manual)
+# Workflow de disparo manual para regenerar PMTiles desde datos en Supabase
+# y subirlos a Cloudflare R2.
+#
+# IMPORTANTE: Este workflow NO descarga datos externos.
+# Los datos deben haber sido ingresados previamente vía:
+#   python -m pipeline ingest --source oede --file <ruta>
+# y los pesos calculados con:
+#   python -m pipeline compute-weights
+
+on:
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: "Dry-run: generar tiles sin subir a R2"
+        required: false
+        default: "false"
+        type: boolean
+
+jobs:
+  build-tiles:
+    runs-on: ubuntu-latest
+    # Fase 1: placeholder. Implementar en Fase 3 cuando build-tiles esté disponible.
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install dependencies
+        run: pip install -r pipeline/requirements.txt
+
+      # Placeholder: build-tiles no implementado en Fase 1
+      - name: Build Tiles (placeholder)
+        env:
+          SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+          SUPABASE_SERVICE_ROLE_KEY: ${{ secrets.SUPABASE_SERVICE_ROLE_KEY }}
+          R2_ACCOUNT_ID: ${{ secrets.R2_ACCOUNT_ID }}
+          R2_ACCESS_KEY_ID: ${{ secrets.R2_ACCESS_KEY_ID }}
+          R2_SECRET_ACCESS_KEY: ${{ secrets.R2_SECRET_ACCESS_KEY }}
+          R2_BUCKET_NAME: ${{ secrets.R2_BUCKET_NAME }}
+          R2_PUBLIC_URL: ${{ secrets.R2_PUBLIC_URL }}
+        run: |
+          echo "build-tiles estará disponible en Fase 3."
+          echo "Inputs: dry_run=${{ inputs.dry_run }}"

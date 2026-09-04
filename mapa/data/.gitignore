@@ -1,0 +1,9 @@
+# data/incoming y data/processed contienen archivos descargados y procesados.
+# NUNCA se versionan. Solo se conservan los .gitkeep de subcarpetas.
+incoming/**
+!incoming/**/
+!incoming/**/.gitkeep
+
+processed/**
+!processed/**/
+!processed/**/.gitkeep
